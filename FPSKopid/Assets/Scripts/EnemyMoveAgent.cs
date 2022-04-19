@@ -34,8 +34,11 @@ public class EnemyMoveAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        
-        transform.localPosition = new Vector3()
+        Tuple<float, float>newEnemyPos = respawnEnemy[UnityEngine.Random.Range(0,6)];
+        Tuple<float, float>newPlayerPos = respawnPlayer[UnityEngine.Random.Range(0,6)];
+
+        targetTransform.localPosition = new Vector3(newPlayerPos.Item1, 0, newPlayerPos.Item2);
+        transform.localPosition = new Vector3(newEnemyPos.Item1, 0, newEnemyPos.Item2);
     }
     public override void CollectObservations(VectorSensor sensor)
     {

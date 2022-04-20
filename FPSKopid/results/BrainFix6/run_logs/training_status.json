@@ -1,0 +1,47 @@
+{
+    "moveToPlayer": {
+        "checkpoints": [
+            {
+                "steps": 499982,
+                "file_path": "results\\BrainFix6\\moveToPlayer\\moveToPlayer-499982.onnx",
+                "reward": null,
+                "creation_time": 1650437707.875257,
+                "auxillary_file_paths": [
+                    "results\\BrainFix6\\moveToPlayer\\moveToPlayer-499982.pt"
+                ]
+            },
+            {
+                "steps": 999944,
+                "file_path": "results\\BrainFix6\\moveToPlayer\\moveToPlayer-999944.onnx",
+                "reward": 1.22301993817091,
+                "creation_time": 1650438400.7738225,
+                "auxillary_file_paths": [
+                    "results\\BrainFix6\\moveToPlayer\\moveToPlayer-999944.pt"
+                ]
+            },
+            {
+                "steps": 1000042,
+                "file_path": "results\\BrainFix6\\moveToPlayer\\moveToPlayer-1000042.onnx",
+                "reward": 1.5110999383032322,
+                "creation_time": 1650438400.8276181,
+                "auxillary_file_paths": [
+                    "results\\BrainFix6\\moveToPlayer\\moveToPlayer-1000042.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000042,
+            "file_path": "results\\BrainFix6\\moveToPlayer.onnx",
+            "reward": 1.5110999383032322,
+            "creation_time": 1650438400.8276181,
+            "auxillary_file_paths": [
+                "results\\BrainFix6\\moveToPlayer\\moveToPlayer-1000042.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

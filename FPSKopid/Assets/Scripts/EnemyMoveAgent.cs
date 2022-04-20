@@ -10,7 +10,6 @@ public class EnemyMoveAgent : Agent
 {
     [SerializeField] private Transform targetTransform;
     [SerializeField] private float moveSpeed = 10f;
-    private Vector3 beginPosition;
 
     List<Tuple<float, float>> respawnEnemy = new List<Tuple<float, float>>{
         new Tuple<float, float>(22, 34),
@@ -37,8 +36,8 @@ public class EnemyMoveAgent : Agent
         Tuple<float, float>newEnemyPos = respawnEnemy[UnityEngine.Random.Range(0,6)];
         Tuple<float, float>newPlayerPos = respawnPlayer[UnityEngine.Random.Range(0,6)];
 
-        targetTransform.localPosition = new Vector3(newPlayerPos.Item1, 0, newPlayerPos.Item2);
-        transform.localPosition = new Vector3(newEnemyPos.Item1, 0, newEnemyPos.Item2);
+        targetTransform.localPosition = new Vector3(newPlayerPos.Item1, 1.2f, newPlayerPos.Item2);
+        transform.localPosition = new Vector3(newEnemyPos.Item1, 1.3f, newEnemyPos.Item2);
     }
     public override void CollectObservations(VectorSensor sensor)
     {
@@ -51,7 +50,8 @@ public class EnemyMoveAgent : Agent
         float moveX = actions.ContinuousActions[0];
         float moveZ = actions.ContinuousActions[1];
 
-        transform.localPosition += (new Vector3(moveX, 0, moveZ)).normalized * Time.deltaTime * moveSpeed;
+        transform.localPosition += new Vector3(moveX, 0, moveZ)* Time.deltaTime * moveSpeed;
+        AddReward(-1f / MaxStep);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -61,21 +61,21 @@ public class EnemyMoveAgent : Agent
         continousActions[1] = Input.GetAxisRaw("Vertical");
     }
 
-    private void Start()
-    {
-        beginPosition = transform.localPosition;
-    }
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log(other.gameObject.tag);
+        //Debug.Log(other.gameObject.tag);
         if(other.gameObject.tag == "Player")
         {
-            SetReward(+1f);
+            Debug.Log("Masuk Akal");
+            SetReward(+2f);
+            EndEpisode();
         }
+        /*
         else if(other.gameObject.tag == "Wall")
         {
             SetReward(-1f);
+            EndEpisode();
         }
-        EndEpisode();
+        */
     }
 }

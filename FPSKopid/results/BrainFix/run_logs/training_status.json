@@ -1,0 +1,65 @@
+{
+    "moveToPlayer": {
+        "checkpoints": [
+            {
+                "steps": 2190,
+                "file_path": "results\\BrainFix\\moveToPlayer\\moveToPlayer-2190.onnx",
+                "reward": -1.0,
+                "creation_time": 1650378690.4197555,
+                "auxillary_file_paths": [
+                    "results\\BrainFix\\moveToPlayer\\moveToPlayer-2190.pt"
+                ]
+            },
+            {
+                "steps": 3348,
+                "file_path": "results\\BrainFix\\moveToPlayer\\moveToPlayer-3348.onnx",
+                "reward": null,
+                "creation_time": 1650378803.192301,
+                "auxillary_file_paths": [
+                    "results\\BrainFix\\moveToPlayer\\moveToPlayer-3348.pt"
+                ]
+            },
+            {
+                "steps": 499983,
+                "file_path": "results\\BrainFix\\moveToPlayer\\moveToPlayer-499983.onnx",
+                "reward": null,
+                "creation_time": 1650380363.9692113,
+                "auxillary_file_paths": [
+                    "results\\BrainFix\\moveToPlayer\\moveToPlayer-499983.pt"
+                ]
+            },
+            {
+                "steps": 500047,
+                "file_path": "results\\BrainFix\\moveToPlayer\\moveToPlayer-500047.onnx",
+                "reward": null,
+                "creation_time": 1650380364.0087414,
+                "auxillary_file_paths": [
+                    "results\\BrainFix\\moveToPlayer\\moveToPlayer-500047.pt"
+                ]
+            },
+            {
+                "steps": 500047,
+                "file_path": "results\\BrainFix\\moveToPlayer\\moveToPlayer-500047.onnx",
+                "reward": null,
+                "creation_time": 1650380764.9125352,
+                "auxillary_file_paths": [
+                    "results\\BrainFix\\moveToPlayer\\moveToPlayer-500047.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500047,
+            "file_path": "results\\BrainFix\\moveToPlayer.onnx",
+            "reward": null,
+            "creation_time": 1650380764.9125352,
+            "auxillary_file_paths": [
+                "results\\BrainFix\\moveToPlayer\\moveToPlayer-500047.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

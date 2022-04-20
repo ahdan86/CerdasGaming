@@ -1,0 +1,65 @@
+{
+    "moveToPlayer": {
+        "checkpoints": [
+            {
+                "steps": 1999940,
+                "file_path": "results\\BrainFix9\\moveToPlayer\\moveToPlayer-1999940.onnx",
+                "reward": 1.0745428481272288,
+                "creation_time": 1650444596.421647,
+                "auxillary_file_paths": [
+                    "results\\BrainFix9\\moveToPlayer\\moveToPlayer-1999940.pt"
+                ]
+            },
+            {
+                "steps": 2499937,
+                "file_path": "results\\BrainFix9\\moveToPlayer\\moveToPlayer-2499937.onnx",
+                "reward": 1.9264999826749165,
+                "creation_time": 1650445460.2483575,
+                "auxillary_file_paths": [
+                    "results\\BrainFix9\\moveToPlayer\\moveToPlayer-2499937.pt"
+                ]
+            },
+            {
+                "steps": 2999934,
+                "file_path": "results\\BrainFix9\\moveToPlayer\\moveToPlayer-2999934.onnx",
+                "reward": 1.9451666573683422,
+                "creation_time": 1650446287.1957967,
+                "auxillary_file_paths": [
+                    "results\\BrainFix9\\moveToPlayer\\moveToPlayer-2999934.pt"
+                ]
+            },
+            {
+                "steps": 3499953,
+                "file_path": "results\\BrainFix9\\moveToPlayer\\moveToPlayer-3499953.onnx",
+                "reward": 1.946714265005929,
+                "creation_time": 1650447125.9296403,
+                "auxillary_file_paths": [
+                    "results\\BrainFix9\\moveToPlayer\\moveToPlayer-3499953.pt"
+                ]
+            },
+            {
+                "steps": 3834140,
+                "file_path": "results\\BrainFix9\\moveToPlayer\\moveToPlayer-3834140.onnx",
+                "reward": 1.9380799770355224,
+                "creation_time": 1650447677.4409993,
+                "auxillary_file_paths": [
+                    "results\\BrainFix9\\moveToPlayer\\moveToPlayer-3834140.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 3834140,
+            "file_path": "results\\BrainFix9\\moveToPlayer.onnx",
+            "reward": 1.9380799770355224,
+            "creation_time": 1650447677.4409993,
+            "auxillary_file_paths": [
+                "results\\BrainFix9\\moveToPlayer\\moveToPlayer-3834140.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

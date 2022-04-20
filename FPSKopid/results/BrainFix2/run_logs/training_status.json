@@ -1,0 +1,29 @@
+{
+    "moveToPlayer": {
+        "checkpoints": [
+            {
+                "steps": 881,
+                "file_path": "results\\BrainFix2\\moveToPlayer\\moveToPlayer-881.onnx",
+                "reward": null,
+                "creation_time": 1650383040.144712,
+                "auxillary_file_paths": [
+                    "results\\BrainFix2\\moveToPlayer\\moveToPlayer-881.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 881,
+            "file_path": "results\\BrainFix2\\moveToPlayer.onnx",
+            "reward": null,
+            "creation_time": 1650383040.144712,
+            "auxillary_file_paths": [
+                "results\\BrainFix2\\moveToPlayer\\moveToPlayer-881.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

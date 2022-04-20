@@ -1,0 +1,49 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1650441105",
+        "python_version": "3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]",
+        "command_line_arguments": "D:\\FileKuliah\\GC\\git\\SmartGaming\\FPSKopid\\venv\\Scripts\\mlagents-learn config/moveToPlayer.yaml --run-id=BrainFix8 --resume",
+        "mlagents_version": "0.28.0",
+        "mlagents_envs_version": "0.28.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.1+cu110",
+        "numpy_version": "1.22.3",
+        "end_time_seconds": "1650441124"
+    },
+    "total": 19.304189400000002,
+    "count": 1,
+    "self": 0.008242200000001532,
+    "children": {
+        "run_training.setup": {
+            "total": 0.20248329999999992,
+            "count": 1,
+            "self": 0.20248329999999992
+        },
+        "TrainerController.start_learning": {
+            "total": 19.0934639,
+            "count": 1,
+            "self": 0.00013250000000297746,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 18.3488965,
+                    "count": 1,
+                    "self": 18.3488965
+                },
+                "TrainerController._save_models": {
+                    "total": 0.7444348999999981,
+                    "count": 1,
+                    "self": 0.005894099999999014,
+                    "children": {
+                        "RLTrainer._checkpoint": {
+                            "total": 0.7385407999999991,
+                            "count": 1,
+                            "self": 0.7385407999999991
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

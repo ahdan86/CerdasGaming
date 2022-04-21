@@ -12,7 +12,7 @@ public class PlayerShoot : MonoBehaviour
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
 
-    int bulletsLeft, bulletsShot;
+    public int bulletsLeft, bulletsShot, totalBullet;
 
     bool shooting, readyToShoot, reloading;
 
@@ -28,6 +28,8 @@ public class PlayerShoot : MonoBehaviour
     void Awake()
     {
         bulletsLeft = magazineSize;
+        totalBullet = 90;
+        bulletsShot = 0;
         readyToShoot = true;
     }
 
@@ -54,13 +56,14 @@ public class PlayerShoot : MonoBehaviour
             click_pressed = false;
         }
 
-        if (r_pressed && bulletsLeft < magazineSize && !reloading) Reload();
-        if (readyToShoot && shooting && !reloading && bulletsLeft <= 0) Reload();
+        if (r_pressed && bulletsLeft < magazineSize && !reloading && totalBullet > 0) Reload();
+        if (readyToShoot && shooting && !reloading && bulletsLeft <= 0 && totalBullet > 0) Reload();
 
         if(readyToShoot && shooting && !reloading && bulletsLeft > 0)
         {
-            //Debug.Log("Masuk Pak Eko");
-            bulletsShot = 0;
+            // Debug.Log("Masuk Pak Eko");
+            // Debug.Log(bulletsShot);
+            // bulletsShot = 0;
             Shoot();
         }
     }
@@ -123,8 +126,15 @@ public class PlayerShoot : MonoBehaviour
     }
 
     private void ReloadFinished()
-    {
-        bulletsLeft = magazineSize;
+    {   
+        Debug.Log("reloadeing");
+        bulletsLeft += bulletsShot;
+        totalBullet -= bulletsShot;
+
+        if(totalBullet<0) totalBullet = 0;
+        
         reloading = false;
+        r_pressed = false;
+        bulletsShot = 0;
     }
 }

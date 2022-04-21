@@ -9,10 +9,16 @@ public class PlayerLook : MonoBehaviour
     public float xSensitivity = 30f;
     public float ySensitivity = 30f;
 
-    public void ProcessLook(Vector2 input){
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
-        float mouseX = input.x;
-        float mouseY = input.y;
+    void Update(){
+
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+        //Debug.Log("x:" + mouseX + ", y:" + mouseY);
 
         //kalkulasi rotasi kamera (liat atas bawah, player gk ikut kamera doang)
         xRotation -= (mouseY * Time.deltaTime) * ySensitivity;

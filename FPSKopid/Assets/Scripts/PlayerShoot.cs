@@ -21,17 +21,27 @@ public class PlayerShoot : MonoBehaviour
 
     public bool allowInvoke = true;
     public bool click_pressed = false;
+    public bool r_pressed = false;
 
     public float arcRange = 1f;
 
-    private void Awake()
+    void Awake()
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
     }
 
-    private void Update()
+    void Update()
     {
+        if (Input.GetKey(KeyCode.R))
+        {
+            r_pressed = true;
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            click_pressed = true;
+        }
+        //Debug.Log(bulletsLeft);
         MyInput();
     }
 
@@ -41,15 +51,15 @@ public class PlayerShoot : MonoBehaviour
         else
         {
             shooting = click_pressed;
-            //Debug.Log(shooting);
             click_pressed = false;
         }
 
-        //if (r_pressed && bulletsLeft < magazineSize && !reloading) Reload();
-        //if (readyToShoot && shooting && !reloading && bulletsLeft <= 0) Reload();
+        if (r_pressed && bulletsLeft < magazineSize && !reloading) Reload();
+        if (readyToShoot && shooting && !reloading && bulletsLeft <= 0) Reload();
 
         if(readyToShoot && shooting && !reloading && bulletsLeft > 0)
         {
+            //Debug.Log("Masuk Pak Eko");
             bulletsShot = 0;
             Shoot();
         }

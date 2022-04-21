@@ -44,7 +44,7 @@ public class PlayerMotor : MonoBehaviour
         if(isGrounded && playerVelocity.y < 0)
             playerVelocity.y = -2f;
         controller.Move(playerVelocity* Time.deltaTime);
-        Debug.Log("Movement:" + moveDirection.x +" "+ moveDirection.z);
+        //Debug.Log("Movement:" + moveDirection.x +" "+ moveDirection.z);
     }
 
     public void Jump(){

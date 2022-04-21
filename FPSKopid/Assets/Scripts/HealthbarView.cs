@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Healthbar : MonoBehaviour
+public class HealthbarView : MonoBehaviour
 {
     [SerializeField] private Image healthBarSprite;
     [SerializeField] private float reduceSpeed = 2;

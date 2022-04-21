@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private HPPlayer healthbar;
     private float currentHealth;
 
     private void Start()
@@ -14,14 +15,15 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision co)
     {
-        if (co.gameObject.tag == "EnemyBullet")
+        if (co.gameObject.tag == "Enemy")
         {
-            currentHealth -= Random.Range(0.5f, 20f);
+            currentHealth -= Random.Range(5f, 10f);
+            healthbar.UpdateHealthBar(maxHealth, currentHealth);
         }
     }
 
     private void Update()
     {
-        Debug.Log(currentHealth);
+        //Debug.Log(currentHealth);
     }
 }

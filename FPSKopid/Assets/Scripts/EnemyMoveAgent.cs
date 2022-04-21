@@ -31,6 +31,7 @@ public class EnemyMoveAgent : Agent
         new Tuple<float, float>(31.08f, 17.23f),
     };
 
+    /*
     public override void OnEpisodeBegin()
     {
         Tuple<float, float>newEnemyPos = respawnEnemy[UnityEngine.Random.Range(0,6)];
@@ -39,6 +40,8 @@ public class EnemyMoveAgent : Agent
         targetTransform.localPosition = new Vector3(newPlayerPos.Item1, 1.2f, newPlayerPos.Item2);
         transform.localPosition = new Vector3(newEnemyPos.Item1, 1.3f, newEnemyPos.Item2);
     }
+    */
+
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(transform.localPosition);
@@ -51,31 +54,34 @@ public class EnemyMoveAgent : Agent
         float moveZ = actions.ContinuousActions[1];
 
         transform.localPosition += new Vector3(moveX, 0, moveZ)* Time.deltaTime * moveSpeed;
-        AddReward(-1f / MaxStep);
+        //AddReward(-1f / MaxStep);
     }
 
+    /*
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         ActionSegment<float> continousActions = actionsOut.ContinuousActions;
         continousActions[0] = Input.GetAxisRaw("Horizontal");
         continousActions[1] = Input.GetAxisRaw("Vertical");
     }
+    */
 
+    /*
     private void OnCollisionEnter(Collision other)
     {
-        //Debug.Log(other.gameObject.tag);
+        Debug.Log(other.gameObject.tag);
         if(other.gameObject.tag == "Player")
         {
             Debug.Log("Masuk Akal");
             SetReward(+2f);
             EndEpisode();
         }
-        /*
+        
         else if(other.gameObject.tag == "Wall")
         {
             SetReward(-1f);
             EndEpisode();
         }
-        */
     }
+    */
 }

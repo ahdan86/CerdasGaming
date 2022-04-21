@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour
     {
         if(currentHealth <= 0)
         {
+            FindObjectOfType<GameManager>().enemyDieCount++;
             Destroy(gameObject);
         }
     }

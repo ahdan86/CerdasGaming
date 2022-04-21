@@ -10,7 +10,7 @@ public class AmmoRefill : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             player = other.gameObject;
-            //player.GetComponent<PlayerShoot>().totalBullet = 100;
+            player.GetComponent<PlayerShoot>().totalBullet = 90;
         }
     }
 }

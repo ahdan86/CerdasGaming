@@ -24,6 +24,14 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(currentHealth);
+        if (currentHealth <= 0)
+        {
+            FindObjectOfType<GameManager>().GameOver();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            FindObjectOfType<GameManager>().Paused();
+        }
     }
 }

@@ -35,16 +35,19 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.R))
+        if (!PauseScreen.isPaused)
         {
-            r_pressed = true;
+            if (Input.GetKey(KeyCode.R))
+            {
+                r_pressed = true;
+            }
+            if (Input.GetButtonDown("Fire1"))
+            {
+                click_pressed = true;
+            }
+            //Debug.Log(bulletsLeft);
+            MyInput();
         }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            click_pressed = true;
-        }
-        //Debug.Log(bulletsLeft);
-        MyInput();
     }
 
     public void MyInput()
@@ -126,9 +129,10 @@ public class PlayerShoot : MonoBehaviour
     }
 
     private void ReloadFinished()
-    {   
-        Debug.Log("reloadeing");
-        bulletsLeft += bulletsShot;
+    {
+        //Debug.Log("reloading");
+        if (totalBullet < bulletsShot) bulletsLeft += totalBullet;
+        else bulletsLeft += bulletsShot;
         totalBullet -= bulletsShot;
 
         if(totalBullet<0) totalBullet = 0;

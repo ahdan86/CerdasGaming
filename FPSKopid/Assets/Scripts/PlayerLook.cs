@@ -16,6 +16,15 @@ public class PlayerLook : MonoBehaviour
 
     void Update(){
 
+        if (PauseScreen.isPaused || GameOverScreen.isOver)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
         //Debug.Log("x:" + mouseX + ", y:" + mouseY);

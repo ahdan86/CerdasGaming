@@ -46,7 +46,10 @@ public class Enemy : MonoBehaviour
         if(currentHealth <= 0)
         {
             FindObjectOfType<GameManager>().enemyDieCount++;
-            Destroy(gameObject);
+            Tuple<float, float> newEnemyPos = respawnEnemy[UnityEngine.Random.Range(0, 6)];
+            transform.localPosition = new Vector3(newEnemyPos.Item1, 1.3f, newEnemyPos.Item2);
+            currentHealth = maxHealth;
+            healthbar.UpdateHealthBar(maxHealth, currentHealth);
         }
     }
 }

@@ -17,15 +17,15 @@ public class GameManager : MonoBehaviour
 
     public void Paused()
     {
-        Time.timeScale = 0;
         PauseScreen.isPaused = true;
+        Time.timeScale = 0;
         pauseScreen.Setup();
     }
 
     public void RestartButton() {
-        Time.timeScale = 1;
         GameOverScreen.isOver = false;
-        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainGame");
     }
 
     public void ResumeButton()

@@ -6,6 +6,7 @@ using System;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject covidPrefab;
+    [SerializeField] private Transform targetTransform;
 
     List<Tuple<float, float>> respawnEnemy = new List<Tuple<float, float>>{
         new Tuple<float, float>(22, 34),
@@ -27,6 +28,8 @@ public class EnemySpawner : MonoBehaviour
         Tuple<float, float> newEnemyPos = respawnEnemy[UnityEngine.Random.Range(0, 6)];
         
         GameObject newCovid = Instantiate(covidPrefab, new Vector3(newEnemyPos.Item1, 1.3f, newEnemyPos.Item2), Quaternion.identity);
+        newCovid.GetComponent<EnemyMoveAgent>().targetTransform = targetTransform;
+
         StartCoroutine(spawner());
         Debug.Log("test");
     }
